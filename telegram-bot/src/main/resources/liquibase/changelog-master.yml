@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/scripts/notification_task.sql
+  - include:
+      file: liquibase/scripts/weather_notification.sql
