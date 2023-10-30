@@ -48,3 +48,6 @@
 ## Известные проблемы
 
 Нет известных проблем на текущий момент.
+
+![image](https://github.com/YuriPetukhov/reminder/assets/128038157/e0eb6331-74ab-4b22-9098-c7636805004c)
+
