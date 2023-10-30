@@ -1,7 +1,6 @@
 package pro.sky.telegrambot.service;
 
 
-import pro.sky.telegrambot.model.Notification;
 import pro.sky.telegrambot.model.WeatherNotification;
 import pro.sky.telegrambot.model.weather.Weather;
 

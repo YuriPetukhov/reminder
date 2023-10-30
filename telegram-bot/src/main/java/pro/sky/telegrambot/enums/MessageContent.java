@@ -34,6 +34,7 @@ public enum MessageContent {
     WHEN_ABOUT_QUESTION("Когда и о чем напомнить?"),
 
     WAIT_MESSAGE("Ожидай сообщение!\n\n"),
+
     DEFAULT_MESSAGE("Такую команду пока не обрабатываем."),
 
     WRONG_TIME_WARNING("Время должно быть позднее текущего\n"

@@ -11,7 +11,7 @@ import pro.sky.telegrambot.enums.UserState;
 import pro.sky.telegrambot.service.NotificationService;
 import pro.sky.telegrambot.service.UserStateService;
 import pro.sky.telegrambot.service.WeatherService;
-import pro.sky.telegrambot.utils.DateAndTimeValidator;
+import pro.sky.telegrambot.utils.DateAndTimeServiceImpl;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -22,7 +22,7 @@ class MessageServiceTest {
     private NotificationService notificationService;
     private UserStateService userStateService;
     private TelegramBot telegramBot;
-    private DateAndTimeValidator dateAndTimeValidator;
+    private DateAndTimeServiceImpl dateAndTimeServiceImpl;
 
     private MessageServiceImpl messageService;
 
@@ -32,9 +32,9 @@ class MessageServiceTest {
         notificationService = Mockito.mock(NotificationService.class);
         userStateService = Mockito.mock(UserStateService.class);
         telegramBot = Mockito.mock(TelegramBot.class);
-        dateAndTimeValidator = Mockito.mock(DateAndTimeValidator.class);
+        dateAndTimeServiceImpl = Mockito.mock(DateAndTimeServiceImpl.class);
 
-        messageService = new MessageServiceImpl(weatherService, notificationService, userStateService, telegramBot, dateAndTimeValidator);
+        messageService = new MessageServiceImpl(weatherService, notificationService, userStateService, telegramBot, dateAndTimeServiceImpl);
     }
 
     @Test
