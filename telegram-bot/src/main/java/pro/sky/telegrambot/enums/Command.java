@@ -1,6 +1,9 @@
 package pro.sky.telegrambot.enums;
 
-public enum Commands {
+import lombok.Getter;
+
+@Getter
+public enum Command {
     START("/start"),
     NOTIFICATION("/notification"),
     WEATHER("/weather"),
@@ -8,16 +11,12 @@ public enum Commands {
 
     private final String text;
 
-    Commands(String text) {
+    Command(String text) {
         this.text = text;
     }
 
-    public String getText() {
-        return this.text;
-    }
-
-    public static Commands fromString(String text) {
-        for (Commands b : Commands.values()) {
+    public static Command fromString(String text) {
+        for (Command b : Command.values()) {
             if (b.text.equalsIgnoreCase(text)) {
                 return b;
             }

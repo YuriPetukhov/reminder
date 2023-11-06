@@ -1,7 +1,6 @@
 package pro.sky.telegrambot.service;
 
 
-import pro.sky.telegrambot.model.Notification;
 import pro.sky.telegrambot.model.WeatherNotification;
 import pro.sky.telegrambot.model.weather.Weather;
 
@@ -18,4 +17,7 @@ public interface WeatherService {
     List<WeatherNotification> findByTime(LocalDateTime currentDate);
 
     void delete(WeatherNotification weatherNotification);
+
+    // Method that is run to check and send notifications
+    void sendDueWeatherNotifications();
 }
