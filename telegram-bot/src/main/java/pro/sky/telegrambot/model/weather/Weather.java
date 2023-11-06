@@ -1,10 +1,8 @@
 package pro.sky.telegrambot.model.weather;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Weather {
     private WeatherMain main;
     private WeatherWind wind;

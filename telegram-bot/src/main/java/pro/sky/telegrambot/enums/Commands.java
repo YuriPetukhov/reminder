@@ -1,5 +1,8 @@
 package pro.sky.telegrambot.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum Commands {
     START("/start"),
     NOTIFICATION("/notification"),
@@ -10,10 +13,6 @@ public enum Commands {
 
     Commands(String text) {
         this.text = text;
-    }
-
-    public String getText() {
-        return this.text;
     }
 
     public static Commands fromString(String text) {
