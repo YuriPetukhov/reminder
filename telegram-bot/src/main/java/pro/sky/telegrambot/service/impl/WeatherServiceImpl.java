@@ -1,5 +1,7 @@
 package pro.sky.telegrambot.service.impl;
 
+import com.pengrad.telegrambot.TelegramBot;
+import com.pengrad.telegrambot.request.SendMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +16,7 @@ import pro.sky.telegrambot.repository.WeatherNotificationRepository;
 import pro.sky.telegrambot.service.WeatherService;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -30,6 +33,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     private final RestTemplate restTemplate;
     private final WeatherNotificationRepository weatherNotificationRepository;
+    private final TelegramBot telegramBot;
 
 
     @Override
@@ -83,5 +87,23 @@ public class WeatherServiceImpl implements WeatherService {
         // Delete the notification from the repository
         log.info("Deleting weather notification: {}", weatherNotification);
         weatherNotificationRepository.delete(weatherNotification);
+    }
+
+    // Method that is run to check and send notifications
+    @Override
+    public void sendDueWeatherNotifications() {
+        LocalDateTime currentDate = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
+        log.info("Checking for due notifications at: {}", currentDate);
+
+        List<WeatherNotification> weatherDueNotifications = findByTime(currentDate);
+
+        // Sending due weather notifications and deleting them from the list
+        for (WeatherNotification notification : weatherDueNotifications) {
+            Weather weather = getWeather(notification.getCityName());
+            SendMessage message = new SendMessage(notification.getChatId(), notification.getCityName() + ": погода: " + weather);
+            log.info("Sending due weather notification for city: {}", notification.getCityName());
+            telegramBot.execute(message);
+            delete(notification);
+        }
     }
 }

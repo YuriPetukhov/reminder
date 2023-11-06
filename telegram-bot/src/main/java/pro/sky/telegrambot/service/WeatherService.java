@@ -17,4 +17,7 @@ public interface WeatherService {
     List<WeatherNotification> findByTime(LocalDateTime currentDate);
 
     void delete(WeatherNotification weatherNotification);
+
+    // Method that is run to check and send notifications
+    void sendDueWeatherNotifications();
 }

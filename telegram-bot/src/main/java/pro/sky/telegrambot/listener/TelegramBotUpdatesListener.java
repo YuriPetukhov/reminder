@@ -7,7 +7,7 @@ import com.pengrad.telegrambot.request.SendMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pro.sky.telegrambot.enums.Commands;
+import pro.sky.telegrambot.enums.Command;
 import pro.sky.telegrambot.enums.UserState;
 import pro.sky.telegrambot.service.MessageService;
 import pro.sky.telegrambot.service.UserStateService;
@@ -65,7 +65,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
             }
 
             // Check if the message matches a command
-            Commands command = Commands.fromString(messageText);
+            Command command = Command.fromString(messageText);
 
             if (command != null) { // If command exists, handle command according to its type
                 switch (command) {
