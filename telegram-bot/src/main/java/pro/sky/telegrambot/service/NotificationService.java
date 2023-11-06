@@ -12,4 +12,7 @@ public interface NotificationService {
     List<Notification> findByTime(LocalDateTime currentDate);
 
     void delete(Notification notification);
+
+    // Method that is run to check and send notifications
+    void sendDueNotifications();
 }

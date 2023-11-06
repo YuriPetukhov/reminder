@@ -1,5 +1,7 @@
 package pro.sky.telegrambot.service.impl;
 
+import com.pengrad.telegrambot.TelegramBot;
+import com.pengrad.telegrambot.request.SendMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,7 @@ import pro.sky.telegrambot.repository.NotificationRepository;
 import pro.sky.telegrambot.service.NotificationService;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -16,6 +19,7 @@ import java.util.List;
 public class NotificationServiceImpl implements NotificationService {
 
     private final NotificationRepository notificationRepository;
+    private final TelegramBot telegramBot;
 
     // Adding new notification
     @Override
@@ -45,5 +49,21 @@ public class NotificationServiceImpl implements NotificationService {
     public void delete(Notification notification) {
         log.info("Deleting notification {}", notification);
         notificationRepository.delete(notification);
+    }
+
+    // Method that is run to check and send notifications
+    @Override
+    public void sendDueNotifications() {
+        LocalDateTime currentDate = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
+        log.info("Checking for due notifications at: {}", currentDate);
+
+        List<Notification> dueNotifications = findByTime(currentDate);
+
+        // Sending due notifications and deleting them from the list
+        for (Notification notification : dueNotifications) {
+            log.info("Sending due notification for chat ID: {}", notification.getChatId());
+            telegramBot.execute(new SendMessage(notification.getChatId(), notification.getReminderText()));
+            delete(notification);
+        }
     }
 }
