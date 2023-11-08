@@ -5,6 +5,10 @@ Coursework: Reminder Bot
 
 ## Project "Telegram Reminder Bot"
 
+![image](https://github.com/YuriPetukhov/reminder/assets/128038157/e0eb6331-74ab-4b22-9098-c7636805004c)
+
+
+
 This project is an implementation of a Telegram bot that accepts messages from the user in the format 
 `01.01.2024 20:00 Do homework` and sends the user a reminder message at the specified time with the text 
 "Do homework". The bot also allows you to get the weather forecast for a specified city at the current 
@@ -56,6 +60,8 @@ Remember to update the dependencies before starting work on new features.
 The project includes basic tests. Run them to ensure that all the key functions are working correctly. 
 If you're adding new functionality, try to also write tests for it. The data obtained is stored in PostgreSQL.
 
+
 ## Known Issues
 
 There are no known issues at the moment.
+
