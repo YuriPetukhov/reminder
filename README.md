@@ -1,13 +1,9 @@
 # reminder
 Coursework: Reminder Bot
 # README.md
-![image](https://github.com/YuriPetukhov/reminder/assets/128038157/d7143846-4d33-40ed-8153-d2d3078bfae9)
-
-## Project "Telegram Reminder Bot"
-
 ![image](https://github.com/YuriPetukhov/reminder/assets/128038157/e0eb6331-74ab-4b22-9098-c7636805004c)
 
-
+## Project "Telegram Reminder Bot"
 
 This project is an implementation of a Telegram bot that accepts messages from the user in the format 
 `01.01.2024 20:00 Do homework` and sends the user a reminder message at the specified time with the text 
