@@ -1,5 +1,6 @@
 # reminder
 Coursework: Reminder Bot
+
 # README.md
 ![image](https://github.com/YuriPetukhov/reminder/assets/128038157/e0eb6331-74ab-4b22-9098-c7636805004c)
 
@@ -24,7 +25,6 @@ format `01.01.2024 20:00 City Name`.
   - PostgreSQL
   - Liquibase
 
-
 ## Running the Project
 
 1. Clone the repository.
@@ -42,7 +42,6 @@ a) to set a reminder: `01.01.2024 20:00 Your message`,
 b) to get the weather forecast: `01.01.2024 20:00 City` or 
 c) to get the current weather forecast: `City`.
 
-
 The bot will process your message and send you a reminder message with "Your message" at the specified time or 
 provide the weather forecast for now or at the designated time.
 
@@ -56,8 +55,6 @@ Remember to update the dependencies before starting work on new features.
 The project includes basic tests. Run them to ensure that all the key functions are working correctly. 
 If you're adding new functionality, try to also write tests for it. The data obtained is stored in PostgreSQL.
 
-
 ## Known Issues
 
 There are no known issues at the moment.
-
