@@ -1,16 +1,21 @@
 # reminder
-Курсовая работа: бот-напоминалка
+Coursework: Reminder Bot
 # README.md
+![image](https://github.com/YuriPetukhov/reminder/assets/128038157/d7143846-4d33-40ed-8153-d2d3078bfae9)
+
+## Project "Telegram Reminder Bot"
 
 ![image](https://github.com/YuriPetukhov/reminder/assets/128038157/e0eb6331-74ab-4b22-9098-c7636805004c)
 
 
-## Проект "Telegram бот - напоминалка о задачах"
 
-Этот проект является реализацией функционала бота для Telegram, который принимает от пользователя сообщения в формате `01.01.2024 20:00 Сделать домашнюю работу` и присылает пользователю сообщение в указанное время с текстом “Сделать домашнюю работу”.
-Также бот позволяет узнать прогноз погоды в указанном городе в текущее время или сообщить о прогнозе погоды в указанном городе в назначенное время, если отправить сообщение в формате `01.01.2024 20:00 Название города`
+This project is an implementation of a Telegram bot that accepts messages from the user in the format 
+`01.01.2024 20:00 Do homework` and sends the user a reminder message at the specified time with the text 
+"Do homework". The bot also allows you to get the weather forecast for a specified city at the current 
+time or report the weather forecast for a specified city at a designated time by sending a message in the 
+format `01.01.2024 20:00 City Name`.
 
-## Технологический стек
+## Tech Stack
 
 - Backend
   - Java 11
@@ -24,33 +29,39 @@
   - Liquibase
 
 
-## Запуск проекта
+## Running the Project
 
-1. Склонируйте репозиторий
-2. Установите зависимости, указанные в `pom.xml`
-3. Укажите настройки подключения к вашей базе данных PostgreSQL в файле `application.properties`
-4. Запустите проект через командную строку при помощи команды `mvn spring-boot:run` или используйте вашу любимую IDE.
-5. Проект запустит сервер на порту 8080. 
+1. Clone the repository.
+2. Install the dependencies specified in `pom.xml`.
+3. Set up the connection settings for your PostgreSQL database in the `application.properties` file.
+4. Run the project via the command line using the command `mvn spring-boot:run` or use your favorite IDE.
+5. The project will launch the server on port 8080.
 
-## Использование бота
+## Using the Bot
 
-1. После запуска сервера переходите в Telegram.
-2. Найдите вашего бота по имени.
-3. Отправьте сообщение в формате: а) если хотите установить напоминание: `01.01.2024 20:00 Ваше сообщение`, б) если хотите узнать прогноз погоды: `01.01.2024 20:00 Город` или в) если хотите узнать прогноз погоды сейчас: `Город`.
-
-Бот обработает ваше сообщение и в заданное время отправит вам сообщение: "Ваше сообщение" или сообщит прогноз погоды сейчас или в указанное время.
-
-## Разработка
-
-Проект использует систему сборки Maven. Артефакты зависимостей указаны в файле pom.xml. Не забывайте обновлять зависимости перед началом работы над новым функционалом.
-
-## Тестирование
-
-Проект включает базовые тесты. Запустите их, чтобы убедиться, что все основные функции работают правильно. Если вы добавляете новый функционал, постарайтесь также написать под него тесты. Полученные данные сохраняются в PostgreSQL.
-
-## Известные проблемы
-
-Нет известных проблем на текущий момент.
+1. After starting the server, open Telegram.
+2. Search for your bot by name.
+3. Send a message in the following formats: 
+a) to set a reminder: `01.01.2024 20:00 Your message`, 
+b) to get the weather forecast: `01.01.2024 20:00 City` or 
+c) to get the current weather forecast: `City`.
 
 
+The bot will process your message and send you a reminder message with "Your message" at the specified time or 
+provide the weather forecast for now or at the designated time.
+
+## Development
+
+The project uses Maven as a build system. The dependency artifacts are listed in the `pom.xml` file. 
+Remember to update the dependencies before starting work on new features.
+
+## Testing
+
+The project includes basic tests. Run them to ensure that all the key functions are working correctly. 
+If you're adding new functionality, try to also write tests for it. The data obtained is stored in PostgreSQL.
+
+
+## Known Issues
+
+There are no known issues at the moment.
 

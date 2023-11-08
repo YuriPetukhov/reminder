@@ -40,6 +40,7 @@ public class MessageServiceImpl implements MessageService {
     }
 
     // Sending a welcome message to the chat
+    @Override
     public void sendWelcomeMessage(String chatFirstName, long chatId) {
         log.info("Sending welcome message to {}: {}", chatFirstName, chatId);
         sendHTMLMessage(chatId, MessageContent.WELCOME_MESSAGE.format(chatFirstName));
