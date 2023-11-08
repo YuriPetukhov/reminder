@@ -1,6 +1,7 @@
 # reminder
 Coursework: Reminder Bot
 # README.md
+![image](https://github.com/YuriPetukhov/reminder/assets/128038157/d7143846-4d33-40ed-8153-d2d3078bfae9)
 
 ## Project "Telegram Reminder Bot"
 
